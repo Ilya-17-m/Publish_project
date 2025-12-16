@@ -6,7 +6,7 @@ RUN pip install --upgrade pip "poetry==2.2.1"
 RUN poetry config virtualenvs.create false --local
 
 COPY pyproject.toml poetry.lock ./
-
+RUN pip install poetry
 RUN poetry install --no-interaction --no-ansi --no-root
 COPY mysite .
 
