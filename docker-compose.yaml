@@ -1,7 +1,7 @@
 services:
   app:
     build:
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
     command:
       - gunicorn
       - mysite.wsgi:application

@@ -36,14 +36,7 @@ INTERNAL_IPS = [
     "0.0.0.0",
 ]
 
-if DEBUG:
-    import socket
 
-    hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-    INTERNAL_IPS.append("10.0.2.2")
-    INTERNAL_IPS.extend(
-        [ip[: ip.rfind(".")] + ".1" for ip in ips]
-    )
 
 # Application definition
 
@@ -56,13 +49,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
 
-    'debug_toolbar',
     'rest_framework',
     'django_filters',
 
-    'shopapp.apps.ShopappConfig',
-    'myauth.apps.MyauthConfig',
-    'blogapp.apps.BlogappConfig',
+    'shopapp',
+    'myauth',
+    'blogapp',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +66,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     # "django.middleware.cache.FetchFromCacheMiddleware",
 ]
 
