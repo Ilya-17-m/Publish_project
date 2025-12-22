@@ -29,8 +29,7 @@ DEBUG = 1
 ALLOWED_HOSTS = [
     '147.45.161.210',
     "127.0.0.1",
-    "0.0.0.0",
-    "myproject.kz",
+    "publish-project.onrender.com",
 ]
 
 INTERNAL_IPS = [
